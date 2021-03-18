@@ -1,10 +1,10 @@
 #include<stdio.h>
 
     void main(){
-        int n,q,i,o,t,max=0;
+        int n,q,i,o,t,max,j;
         scanf("%d %d",&n ,&q);
-        int x[n];
-        for( i=0 ; i<n ; i++ ){
+        int x[n+1];
+        for( i=1 ; i<=n ; i++ ){
             x[i]=0;
         }
         char fuct;
@@ -13,13 +13,14 @@
             scanf("%c",&fuct);
             if(fuct=='U'){
                 scanf("%d %d",&o,&t);
-                x[o-1]=t;
+                x[o]=t;
             }
-            else if(fuct=='P'){
+            if(fuct=='P'){
                 scanf("%d %d",&o,&t);
-                for( i=o-1 ; i<t ; i++ ){
-                    if(max<x[i]){
-                        max=x[i];
+                max=0;
+                for( j=o ; j<=t ; j++ ){
+                    if(x[j]>max){
+                        max=x[j];
                     }
                 }
                 printf("%d\n",max);
