@@ -9,8 +9,7 @@
         }
         char fuct;
         for( i=0 ; i<q ; i++ ){
-            fflush(stdin);
-            scanf("%c",&fuct);
+            scanf("%s",&fuct);
             if(fuct=='U'){
                 scanf("%d %d",&o,&t);
                 x[o]=t;
