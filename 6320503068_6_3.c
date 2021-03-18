@@ -3,19 +3,21 @@
     void main(){
         int n,q,i,o,t,max=0;
         scanf("%d %d",&n ,&q);
-        int x[n+1];
-        for( i=0 ; i<=n ; i++ ){
+        int x[n];
+        for( i=0 ; i<n ; i++ ){
             x[i]=0;
         }
         char fuct;
-        for( i=0 ; i<=q ; i++ ){
+        for( i=0 ; i<q ; i++ ){
             fflush(stdin);
-            scanf("%c %d %d",&fuct,&o,&t);
+            scanf("%c",&fuct);
             if(fuct=='U'){
-               x[o]=t;
+                scanf("%d %d",&o,&t);
+                x[o-1]=t;
             }
             else if(fuct=='P'){
-                for( i=o ; i<=t ; i++ ){
+                scanf("%d %d",&o,&t);
+                for( i=o-1 ; i<t ; i++ ){
                     if(max<x[i]){
                         max=x[i];
                     }
