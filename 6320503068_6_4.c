@@ -6,6 +6,7 @@
         for( i=0 ; i<n ; i++ ){
             scanf("%d %d",&x,&y);
             p[x-1]++;
+            p[y-1]++;
         }
         for( i=0 ; i<n ; i++ ){
             if(max<p[i]){
